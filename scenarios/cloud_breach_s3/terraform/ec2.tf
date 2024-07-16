@@ -95,7 +95,6 @@ resource "aws_instance" "ec2-vulnerable-proxy-server" {
     instance_type = "t2.micro"
     iam_instance_profile = "${aws_iam_instance_profile.cg-ec2-instance-profile.name}"
     subnet_id = "${aws_subnet.cg-public-subnet-1.id}"
-    associate_public_ip_address = true
     vpc_security_group_ids = [
         "${aws_security_group.cg-ec2-ssh-security-group.id}",
         "${aws_security_group.cg-ec2-http-security-group.id}"
